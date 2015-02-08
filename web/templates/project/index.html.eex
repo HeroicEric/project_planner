@@ -1,0 +1,7 @@
+<h1>Projects</h1>
+
+<ul>
+  <%= for project <- @projects do %>
+    <li><%= project.name %></li>
+  <% end %>
+</ul>
