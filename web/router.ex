@@ -20,6 +20,12 @@ defmodule ProjectPlanner.Router do
     resources "projects", ProjectController, only: [:index]
   end
 
+  scope "/api/v1", alias: ProjectPlanner do
+    pipe_through :api
+
+    resources "projects", ProjectController, only: [:index]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ProjectPlanner do
   #   pipe_through :api
