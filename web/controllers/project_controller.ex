@@ -6,6 +6,6 @@ defmodule ProjectPlanner.ProjectController do
   def index(conn, _params) do
     projects = ProjectPlanner.Queries.all_projects
 
-    render conn, "index.html", projects: projects
+    render conn, :index, projects: projects
   end
 end
