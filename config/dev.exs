@@ -5,6 +5,12 @@ config :project_planner, ProjectPlanner.Endpoint,
   debug_errors: true,
   cache_static_lookup: false
 
+config :project_planner, ProjectPlanner.Repo,
+  database: "project_planner_development",
+  username: "eric",
+  password: "",
+  hostname: "localhost"
+
 # Enables code reloading for development
 config :phoenix, :code_reloader, true
 
