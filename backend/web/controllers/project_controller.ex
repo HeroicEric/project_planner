@@ -1,16 +1,19 @@
 defmodule ProjectPlanner.ProjectController do
   use Phoenix.Controller
 
+  alias ProjectPlanner.Project
+  alias ProjectPlanner.Repo
+
   plug :action
 
   def index(conn, _params) do
-    projects = ProjectPlanner.Project.all |> ProjectPlanner.Repo.all
+    projects = Project.all |> Repo.all
 
     render conn, :index, projects: projects
   end
 
   def show(conn, %{"id" => id}) do
-    project = ProjectPlanner.Repo.get(ProjectPlanner.Project, id)
+    project = Repo.get(Project, id)
 
     if project do
       render conn, :show, project: project
