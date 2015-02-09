@@ -1,3 +1,7 @@
+<h1>Project</h1>
+
+<p>{{link-to 'Add a Project' 'projects.new'}}</p>
+
 <ul>
   {{#each project in model}}
     <li>{{link-to project.name 'projects.show' project}}</li>

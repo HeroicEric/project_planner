@@ -1,0 +1,23 @@
+<h1>New Project</h1>
+
+<form {{action 'save' model on='submit'}}>
+  <p>
+    <label for="projectName">Name</label>
+    {{input id="projectName" value=model.name}}
+
+    {{#each error in model.errors.name}}
+      <span>*{{error.message}}</span>
+    {{/each}}
+  </p>
+
+  <p>
+    <label for="projectDescription">Description</label>
+    {{textarea id="projectDescription" value=model.description}}
+
+    {{#each error in model.errors.description}}
+      <span>*{{error.message}}</span>
+    {{/each}}
+  </p>
+
+  <button>Save</button>
+</form>

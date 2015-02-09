@@ -21,4 +21,26 @@ defmodule ProjectPlanner.ProjectController do
       conn |> put_status(:not_found) |> text ""
     end
   end
+
+  def create(conn, params) do
+    changeset = Project.changeset(%Project{}, params["project"])
+
+    if changeset.valid? do
+      project = Repo.insert(changeset)
+
+      conn
+      |> put_status(:created)
+      |> render :show, project: project
+    else
+      conn
+      |> put_status(:unprocessable_entity)
+      |> render :errors, errors: changeset.errors
+    end
+  end
+
+  defp atomize_keys(struct) do
+    Enum.reduce(struct, %{}, fn({key, value}, map) ->
+      Map.put(map, String.to_atom(key), value)
+    end)
+  end
 end

@@ -7,6 +7,11 @@ defmodule ProjectPlanner.Project do
     field :description, :string
   end
 
+  def changeset(project, params \\ nil) do
+    params
+    |> cast(project, ~w(name), ~w(description))
+  end
+
   def all do
     from project in ProjectPlanner.Project
   end

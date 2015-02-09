@@ -1,0 +1,10 @@
+<form {{action 'save' on='submit'}}>
+  <label for="projectName">Name</label>
+  {{input value=values.name}}
+
+  {{#each error in errors}}
+    <p>{{error.message}}</p>
+  {{/each}}
+
+  <button>Save</button>
+</form>
