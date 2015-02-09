@@ -4,7 +4,7 @@ defmodule ProjectPlanner.ProjectController do
   plug :action
 
   def index(conn, _params) do
-    projects = ProjectPlanner.Queries.all_projects
+    projects = ProjectPlanner.Project.all |> ProjectPlanner.Repo.all
 
     render conn, :index, projects: projects
   end
