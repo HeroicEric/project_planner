@@ -4,4 +4,8 @@ defmodule ProjectPlanner.ProjectView do
   def render("index.json", %{projects: projects}) do
     %{projects: projects}
   end
+
+  def render("show.json", %{project: project}) do
+    %{project: project}
+  end
 end
