@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-var get = Ember.get;
-
 export default Ember.Route.extend({
   model: function() {
     return this.store.createRecord('project');
@@ -14,7 +12,7 @@ export default Ember.Route.extend({
       project.save().then(function(project) {
         _this.transitionTo('projects.show', project);
       }, function() {
-      })
+      });
     }
   }
 });
