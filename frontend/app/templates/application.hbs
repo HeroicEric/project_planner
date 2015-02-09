@@ -1,3 +1,21 @@
-<h1>Project Planner</h1>
+<div class="contain-to-grid">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1>{{link-to 'Project Planner' 'projects.index'}}</h1>
+      </li>
+    </ul>
 
-{{outlet}}
+    <section class="top-bar-section">
+      <ul class="right">
+        <li>{{link-to 'Projects' 'projects.index'}}</li>
+      </ul>
+    </section>
+  </nav>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    {{outlet}}
+  </div>
+</div>

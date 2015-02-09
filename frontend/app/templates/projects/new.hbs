@@ -1,23 +1,36 @@
 <h1>New Project</h1>
 
 <form {{action 'save' model on='submit'}}>
-  <p>
-    <label for="projectName">Name</label>
-    {{input id="projectName" value=model.name}}
+  <div class="row">
+    <div class="small-12 columns">
+      <label for="projectName" {{bind-attr class="model.errors.name:error"}}>
+        Name
+        {{input id="projectName" value=model.name}}
+      </label>
 
-    {{#each error in model.errors.name}}
-      <span>*{{error.message}}</span>
-    {{/each}}
-  </p>
+      {{#each error in model.errors.name}}
+        <small class="error">*{{error.message}}</small>
+      {{/each}}
+    </div>
+  </div>
 
-  <p>
-    <label for="projectDescription">Description</label>
-    {{textarea id="projectDescription" value=model.description}}
+  <div class="row">
+    <div class="small-12 columns">
+      <label for="projectDescription"
+        {{bind-attr class="model.errors.description:error"}}>
+        Description
+        {{textarea id="projectDescription" value=model.description}}
+      </label>
 
-    {{#each error in model.errors.description}}
-      <span>*{{error.message}}</span>
-    {{/each}}
-  </p>
+      {{#each error in model.errors.description}}
+        <small class="error">*{{error.message}}</small>
+      {{/each}}
+    </div>
+  </div>
 
-  <button>Save</button>
+  <div class="row">
+    <div class="small-12 columns">
+      <button>Save</button>
+    </div>
+  </div>
 </form>
