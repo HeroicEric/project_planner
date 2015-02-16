@@ -37,10 +37,4 @@ defmodule ProjectPlanner.ProjectController do
       |> render :errors, errors: changeset.errors
     end
   end
-
-  defp atomize_keys(struct) do
-    Enum.reduce(struct, %{}, fn({key, value}, map) ->
-      Map.put(map, String.to_atom(key), value)
-    end)
-  end
 end
