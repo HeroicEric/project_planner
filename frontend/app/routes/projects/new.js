@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       var _this = this;
 
       project.save().then(function(project) {
-        _this.transitionTo('projects.show', project);
+        _this.transitionTo('project', project);
       }, function() {
       });
     },

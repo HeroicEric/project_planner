@@ -3,8 +3,8 @@ import Ember from 'ember';
 var get = Ember.get;
 
 export default Ember.Route.extend({
-  model: function(params) {
-    return this.store.find('project', params.project_id);
+  model: function() {
+    return this.modelFor('project');
   },
 
   actions: {
@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       var _this = this;
 
       project.save().then(function(project) {
-        _this.transitionTo('projects.show', project);
+        _this.transitionTo('project', project);
       }, function() {
       });
     },
