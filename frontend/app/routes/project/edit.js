@@ -13,7 +13,9 @@ export default Ember.Route.extend({
 
       project.save().then(function(project) {
         _this.transitionTo('project', project);
+        _this.notify.success('Project saved successfully!');
       }, function() {
+        _this.notify.alert('Project could not be saved!');
       });
     },
 
