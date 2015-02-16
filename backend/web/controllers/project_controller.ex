@@ -37,4 +37,21 @@ defmodule ProjectPlanner.ProjectController do
       |> render :errors, errors: changeset.errors
     end
   end
+
+  def update(conn, params) do
+    project = Repo.get(Project, params["id"])
+    changeset = Project.changeset(project, params["project"])
+
+    if changeset.valid? do
+      project = Repo.update(changeset)
+
+      conn
+      |> put_status(:ok)
+      |> render :show, project: project
+    else
+      conn
+      |> put_status(:unprocessable_entity)
+      |> render :errors, errors: changeset.errors
+    end
+  end
 end
