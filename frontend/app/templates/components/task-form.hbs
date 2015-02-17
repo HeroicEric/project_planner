@@ -1,0 +1,33 @@
+<form {{action 'save' task on='submit'}}>
+  <div class="row">
+    <div class="small-12 columns">
+      <label for="taskTitle" class="{{if errors.title 'error'}}">
+        Title
+        {{input id="taskTitle" value=task.title}}
+      </label>
+
+      {{#each errors.title as |error|}}
+        <small class="error">*{{error.message}}</small>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <label for="taskDescription" class="{{if errors.description 'error'}}">
+        Description
+        {{textarea id="taskDescription" value=task.description}}
+      </label>
+
+      {{#each errors.description as |error|}}
+        <small class="error">*{{error.message}}</small>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <button>Save</button>
+    </div>
+  </div>
+</form>
