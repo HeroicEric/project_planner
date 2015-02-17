@@ -2,7 +2,11 @@ defmodule ProjectPlanner.Project do
   use Ecto.Model
   import Ecto.Query
 
+  alias ProjectPlanner.Task
+
   schema "projects" do
+    has_many :tasks, Task
+
     field :name, :string
     field :description, :string
   end

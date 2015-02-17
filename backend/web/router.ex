@@ -25,6 +25,8 @@ defmodule ProjectPlanner.Router do
 
     resources "projects", ProjectController,
       only: [:index, :show, :create, :update]
+
+    resources "tasks", TaskController, only: [:index]
   end
 
   # Other scopes may use custom stacks.

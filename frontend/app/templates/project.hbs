@@ -2,6 +2,13 @@
 
 <p>{{model.description}}</p>
 
-{{link-to 'Edit' 'project.edit' model class='btn btn-primary'}}
+<ul class="button-group">
+  <li>
+    {{link-to 'Tasks' 'project.tasks' model class='button secondary'}}
+  </li>
+  <li>
+    {{link-to 'Edit' 'project.edit' model class='button secondary'}}
+  </li>
+</ul>
 
 {{outlet}}
