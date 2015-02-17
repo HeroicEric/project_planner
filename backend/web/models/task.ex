@@ -11,7 +11,17 @@ defmodule ProjectPlanner.Task do
     field :description, :string
   end
 
-  def all do
-    from task in ProjectPlanner.Task
+  def changeset(project, params \\ nil) do
+    params
+    |> cast(project, ~w(title project_id), ~w(description))
+  end
+
+  def all(query) do
+    from task in query
+  end
+
+  def with_id(query, ids) do
+    from task in query,
+    where: task.id in ^ids
   end
 end

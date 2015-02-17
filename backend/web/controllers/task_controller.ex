@@ -9,16 +9,33 @@ defmodule ProjectPlanner.TaskController do
 
   plug :action
 
-  def index(conn, %{"project_id" => project_id}) do
-    project = Repo.get(Project, project_id)
-    tasks = assoc(project, :tasks) |> Repo.all
+  def index(conn, %{"ids" => ids}) do
+    tasks = Task
+    |> Task.with_id(ids)
+    |> Repo.all
 
     render conn, :index, tasks: tasks
   end
 
   def index(conn, _params) do
-    tasks = Task.all |> Repo.all
+    tasks = Task |> Task.all |> Repo.all
 
     render conn, :index, tasks: tasks
+  end
+
+  def create(conn, params) do
+    changeset = Task.changeset(%Task{}, params["task"])
+
+    if changeset.valid? do
+      task = Repo.insert(changeset)
+
+      conn
+      |> put_status(:created)
+      |> render :show, task: task
+    else
+      conn
+      |> put_status(:unprocessable_entity)
+      |> render :errors, errors: changeset.errors
+    end
   end
 end
