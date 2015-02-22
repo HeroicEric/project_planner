@@ -1,0 +1,56 @@
+// Buttons
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 100%;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 3;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.btn {
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+// Sizes
+
+.btn--small {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  line-height: 2;
+}
+
+.btn--large {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 4;
+}
+
+.btn--huge {
+  padding-right: 2em;
+  padding-left: 2em;
+  line-height: 5;
+}
+
+.btn--full {
+  width:100%;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+}

@@ -1,13 +1,20 @@
-<h1>{{model.name}}</h1>
+<div class="project-header">
+  <div class="project-title">
+    <h1>{{model.name}}</h1>
+  </div>
+
+  <div class="project-actions">
+    {{#link-to 'project.edit' model}}
+      {{material-design-icon name='settings'}}
+    {{/link-to}}
+  </div>
+</div>
 
 <p>{{model.description}}</p>
 
-<ul class="button-group">
+<ul>
   <li>
-    {{link-to 'Tasks' 'project.tasks' model class='button secondary'}}
-  </li>
-  <li>
-    {{link-to 'Edit' 'project.edit' model class='button secondary'}}
+    {{link-to 'Tasks' 'project.tasks' model class='btn'}}
   </li>
 </ul>
 
