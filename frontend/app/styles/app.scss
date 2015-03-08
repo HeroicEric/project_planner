@@ -1,3 +1,95 @@
-@import "settings";
+@import 'base';
+@import 'buttons';
 
-@import "foundation";
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.list {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.list-item {
+  display: block;
+  padding: 16px;
+}
+
+.sidebar {
+  width: 100px;
+  background: #191919;
+
+  a {
+    color: #666666;
+  }
+}
+
+.main-content {
+  width: 100%;
+  padding: 0 24px;
+}
+
+.text-input,
+textarea {
+  width: 100%;
+  border: 1px solid #444444;
+  padding: 12px;
+}
+
+.project-header {
+  width: 100%;
+  display: table;
+  border-bottom: 5px solid #f4f4f4;
+}
+
+
+.project-info,
+.project-actions {
+  display: table-cell;
+}
+
+.project-title,
+.project-description {
+  display: inline-block;
+}
+
+.project-description {
+  color: #bababa;
+}
+
+.project-actions {
+  text-align: right;
+}
+
+.task-list {
+  flex: 2;
+}
+
+.task-list-item {
+  border-bottom: 3px solid #f4f4f4;
+
+  &:hover {
+    background-color: #f4f4f4;
+  }
+
+  &:first-child {
+    border-top: 3px solid #f4f4f4;
+  }
+}
+
+.secondary-sidebar {
+  margin-left: 24px;
+  flex: 1;
+}

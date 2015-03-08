@@ -4,8 +4,7 @@ import {
 } from 'ember-qunit';
 
 moduleForModel('task', {
-  // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:project']
 });
 
 test('it exists', function(assert) {

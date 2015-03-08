@@ -1,15 +1,13 @@
-<div class="contain-to-grid">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1>{{link-to 'Project Planner' 'projects'}}</h1>
-      </li>
-    </ul>
-  </nav>
-</div>
+<div class="container">
+  <div class="sidebar">
+    <nav role="navigation">
+      <ul class="list">
+        <li class="list-item">{{link-to 'Projects' 'projects.index'}}</li>
+      </ul>
+    </nav>
+  </div>
 
-<div class="row">
-  <div class="small-12 columns">
+  <div class="main-content">
     {{ember-notify}}
 
     {{outlet}}

@@ -12,7 +12,8 @@ Router.map(function() {
 
   this.resource('project', { path: 'projects/:project_id' }, function() {
     this.route('edit');
-    this.route('tasks', function() {});
+    this.route('new-task', { path: 'tasks/new' });
+    this.route('task', { path: 'tasks/:task_id' });
   });
 });
 
