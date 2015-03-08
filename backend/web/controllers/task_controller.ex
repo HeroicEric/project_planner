@@ -1,9 +1,6 @@
 defmodule ProjectPlanner.TaskController do
-  import Ecto.Model
-
   use Phoenix.Controller
 
-  alias ProjectPlanner.Project
   alias ProjectPlanner.Repo
   alias ProjectPlanner.Task
 
@@ -21,6 +18,16 @@ defmodule ProjectPlanner.TaskController do
     tasks = Task |> Task.all |> Repo.all
 
     render conn, :index, tasks: tasks
+  end
+
+  def show(conn, %{"id" => id}) do
+    task = Repo.get(Task, id)
+
+    if task do
+      render conn, :show, task: task
+    else
+      conn |> put_status(:not_found) |> text ""
+    end
   end
 
   def create(conn, params) do
