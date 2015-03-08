@@ -1,37 +1,5 @@
+@import 'base';
 @import 'buttons';
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  padding: 0;
-  font-size: 16px;
-  line-height: 150%;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  color: #444444;
-  background: #ffffff;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-a {
-  text-decoration: none;
-}
-
-a,
-a:visited {
-  color: #D6391F;
-}
 
 .right {
   float: right;
@@ -86,23 +54,42 @@ textarea {
   border-bottom: 5px solid #f4f4f4;
 }
 
-.project-title,
+
+.project-info,
 .project-actions {
   display: table-cell;
+}
+
+.project-title,
+.project-description {
+  display: inline-block;
+}
+
+.project-description {
+  color: #bababa;
 }
 
 .project-actions {
   text-align: right;
 }
 
+.task-list {
+  flex: 2;
+}
+
 .task-list-item {
   border-bottom: 3px solid #f4f4f4;
-
-  &:first-child {
-    border-top: 3px solid #f4f4f4;
-  }
 
   &:hover {
     background-color: #f4f4f4;
   }
+
+  &:first-child {
+    border-top: 3px solid #f4f4f4;
+  }
+}
+
+.secondary-sidebar {
+  margin-left: 24px;
+  flex: 1;
 }

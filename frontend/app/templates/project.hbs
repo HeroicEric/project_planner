@@ -1,6 +1,7 @@
 <div class="project-header">
-  <div class="project-title">
-    <h1>{{model.name}}</h1>
+  <div class="project-info">
+    <h1 class="project-title">{{model.name}}</h1>
+    <p class="project-description">{{model.description}}</p>
   </div>
 
   <div class="project-actions">
@@ -10,12 +11,16 @@
   </div>
 </div>
 
-<p>{{model.description}}</p>
+<div class="container">
+  <div class="task-list">
+    <p>{{link-to 'Add Task' 'project.new-task' model class='btn btn--primary'}}</p>
 
-<ul>
-  <li>
-    {{link-to 'Tasks' 'project.tasks' model class='btn'}}
-  </li>
-</ul>
+    <div class="list">
+      {{#each model.tasks as |task|}}
+        {{link-to task.title 'project.task' model task class='list-item task-list-item'}}
+      {{/each}}
+    </div>
+  </div>
 
-{{outlet}}
+  {{outlet}}
+</div>

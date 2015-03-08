@@ -16,16 +16,21 @@
   padding-left: 1em;
 }
 
-.btn {
-  &,
-  &:hover {
-    text-decoration: none;
-  }
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:visited {
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+}
 
-  &:active,
-  &:focus {
-    outline: none;
-  }
+// Styles
+
+.btn--primary {
+  color: #000000;
+  background-color: #c0c0c0;
 }
 
 // Sizes
