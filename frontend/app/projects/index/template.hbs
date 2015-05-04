@@ -1,0 +1,11 @@
+<h1>Projects</h1>
+
+{{link-to 'Add a Project' 'projects.new' class="button"}}
+
+<ul>
+  {{#each model as |project|}}
+    <li>{{link-to project.name 'project' project}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
